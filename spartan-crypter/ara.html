@@ -160,7 +160,7 @@
     <!-- This site uses the Google Analytics by ExactMetrics plugin v6.7.0 - Using Analytics tracking - https://www.exactmetrics.com/ -->
     <script src="https://www.googletagmanager.com/gtag/js?id=UA-109544212-1" type="text/javascript"
         data-cfasync="false"></script>
-
+ 
     <!-- / Google Analytics by MonsterInsights -->
     <!-- MonsterInsights Ads Tracking -->
     <script type="text/javascript" data-cfasync="false">
@@ -3334,12 +3334,12 @@ wpscb-text-inner-wrapper">
         <span class="skype-chat" data-enable-calling="false" data-provider="wordpress"></span>
         <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
     </div>
-    <!-- Yandex.Metrika counter -->
-  
+ 
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/47940146" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
-   
+    <!-- /Yandex.Metrika counter -->
+
     <!-- <link rel='stylesheet' id='vc_animate-css-css'  href='https://www.bluekey.com/wp-content/plugins/js_composer/assets/lib/bower/animate-css/animate.min.css?ver=6.6.0' type='text/css' media='all' /> -->
     <!-- <link rel='stylesheet' id='ts-font-ecommerce-css'  href='https://www.bluekey.com/wp-content/plugins/ts-visual-composer-extend/css/ts-font-ecommerce.css?ver=5.2.8' type='text/css' media='all' /> -->
     <!-- <link rel='stylesheet' id='ts-extend-pricinginspired-css'  href='https://www.bluekey.com/wp-content/plugins/ts-visual-composer-extend/css/jquery.vcsc.pricinginspired.min.css?ver=5.7.2' type='text/css' media='all' /> -->
@@ -3478,6 +3478,44 @@ wpscb-text-inner-wrapper">
             </div>
         </div>
     </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 
 </html><!-- WP Fastest Cache file was created in 0.76570415496826 seconds, on 26-06-21 12:36:28 -->
